@@ -16,6 +16,10 @@ public abstract class Model {
     public static Statement statement=null;
     
     public Model(){
+        initialize();
+    }
+    
+    public static void initialize(){
         try {
             Class.forName(GlobalConstants.registerDriver);
             Connection con = DriverManager.getConnection(GlobalConstants.connectionUrl);
@@ -24,5 +28,10 @@ public abstract class Model {
             Logger.getLogger(Model.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     abstract public void fromResultSet(ResultSet res) throws SQLException;
+    
+    public static String escapeString(String s){
+        return "'"+s+"'";
+    }
 }
