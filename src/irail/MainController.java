@@ -29,6 +29,8 @@ public class MainController implements ActionListener,ListSelectionListener{
         mainView = new MainView();
         mainView.search.addActionListener(this);
         mainView.table.getTableHeader().setReorderingAllowed(false);
+        mainView.table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        mainView.table.getSelectionModel().addListSelectionListener(this);
     }
 
     @Override
@@ -55,7 +57,16 @@ public class MainController implements ActionListener,ListSelectionListener{
 
     @Override
     public void valueChanged(ListSelectionEvent e) {
-        System.out.println(e);
+        if(e.getValueIsAdjusting())
+            return;
+        int iSelectedIndex = e.getFirstIndex();
+        int trainNo = Integer.parseInt((String) mainView.table.getModel().getValueAt(iSelectedIndex, 0));
+        mainView.setVisible(false);
+        Train train = new Train(trainNo);
+        Station src = new Station(mainView.src.getText().toString().toUpperCase());
+        Station dest = new Station(mainView.des.getText().toString().toUpperCase());
+        String date = "2015-10-17"; //change later
+        //train, src, dest, date
     }
 
     
