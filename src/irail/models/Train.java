@@ -79,6 +79,26 @@ public class Train extends Model{
             return false;
     }
     
+    public String[][] getTimeTable(){
+        ArrayList<String[]> stations = new ArrayList();
+        String[] temp;
+        ResultSet rs;
+        try {
+            rs = statement.executeQuery("select * from train_station where train_no = "+trainNo+" order by day,time");
+            while(rs.next()){
+                temp = new String[3];
+                temp[0] = rs.getString(2);
+                temp[1] = rs.getString(3);
+                temp[2] = rs.getString(4);
+                stations.add(temp);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Train.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String[][] res = new String[stations.size()][3];
+        return (String[][]) stations.toArray(res);
+    }
+    
     public String[] toRow(){
         String res[] = {String.valueOf(trainNo),name,start.getName(),dest.getName(),type};
         return res;
