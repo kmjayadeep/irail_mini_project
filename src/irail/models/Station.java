@@ -38,4 +38,8 @@ public class Station extends Model{
         name = res.getString("name");
         shortName = res.getString("short_name");
     }
+
+    public String getName() {
+        return name;
+    }
 }
