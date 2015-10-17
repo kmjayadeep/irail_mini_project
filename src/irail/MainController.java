@@ -1,5 +1,6 @@
 package irail;
 
+import irail.controllers.TrainDetailsController;
 import irail.models.*;
 import irail.views.MainView;
 import java.awt.event.ActionEvent;
@@ -66,7 +67,7 @@ public class MainController implements ActionListener,ListSelectionListener{
         Station src = new Station(mainView.src.getText().toString().toUpperCase());
         Station dest = new Station(mainView.des.getText().toString().toUpperCase());
         String date = "2015-10-17"; //change later
-        //train, src, dest, date
+        new TrainDetailsController(train, src, dest, date);
     }
 
     

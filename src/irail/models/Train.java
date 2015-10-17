@@ -108,4 +108,8 @@ public class Train extends Model{
         String s[] =  {"Train No","Name","From","To","Type "};
         return s;
     }
+    
+    public String getName(){
+        return name;
+    }
 }
