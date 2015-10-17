@@ -14,14 +14,14 @@ public class MainController {
 
     public static void main(String[] args) {
         
-        Model.initialize();
-        ArrayList<Train> tr = Train.search("KZE", "TVC");
-        
-        for (Iterator<Train> it = tr.iterator(); it.hasNext();) {
-            Train tt = it.next();
-            System.out.println(tt);
-        }
-        
+//        Model.initialize();
+//        ArrayList<Train> tr = Train.search("KZE", "TVC");
+//        
+//        for (Iterator<Train> it = tr.iterator(); it.hasNext();) {
+//            Train tt = it.next();
+//            System.out.println(tt);
+//        }
+//        
         MainView mv = new MainView();
     }
     
