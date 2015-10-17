@@ -83,4 +83,9 @@ public class Train extends Model{
         String res[] = {String.valueOf(trainNo),name,start.getName(),dest.getName(),type};
         return res;
     }
+    
+    public static String[] getColumns(){
+        String s[] =  {"Train No","Name","From","To","Type "};
+        return s;
+    }
 }
