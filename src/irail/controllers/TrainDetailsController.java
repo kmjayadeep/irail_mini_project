@@ -1,19 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package irail.controllers;
 
+import irail.View;
 import irail.models.Birth;
 import irail.models.Station;
 import irail.models.Train;
 import irail.views.TrainDetails;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import javax.swing.JRadioButton;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -35,7 +28,7 @@ public class TrainDetailsController implements ActionListener{
        trainView = new TrainDetails();
        trainView.srcname.setText(src.getName());
        trainView.desname.setText(des.getName());
-       trainView.tname.setText(T.getName());
+       trainView.tname.setText(T.getNo()+" - "+T.getName());
        String timeTable[][] = T.getTimeTable();
        trainView.table.setModel(new DefaultTableModel(timeTable,new String[] {"Station","Day","Time"}));
        trainView.jRadioButton1.addActionListener(this);
@@ -44,6 +37,7 @@ public class TrainDetailsController implements ActionListener{
        trainView.jRadioButton4.addActionListener(this);
        trainView.infoPanel.setVisible(false);
        trainView.setVisible(true);
+       View.addToDesk(trainView);
    }
 
     @Override

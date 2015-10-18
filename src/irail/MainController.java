@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.ListSelectionModel;
-import javax.swing.SingleSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
@@ -20,18 +19,21 @@ import javax.swing.table.DefaultTableModel;
 public class MainController implements ActionListener,ListSelectionListener{
     
     MainView mainView;
+    View view;
 
     public static void main(String[] args) {
         Model.initialize();
+        new View();
         new MainController();
     }
-    
+
     public MainController(){
         mainView = new MainView();
         mainView.search.addActionListener(this);
         mainView.table.getTableHeader().setReorderingAllowed(false);
         mainView.table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         mainView.table.getSelectionModel().addListSelectionListener(this);
+        View.addToDesk(mainView);
     }
 
     @Override

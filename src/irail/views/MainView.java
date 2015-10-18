@@ -5,6 +5,7 @@
  */
 package irail.views;
 
+import irail.GlobalConstants;
 import irail.models.Train;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -13,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author jayadeep
  */
-public class MainView extends JFrame{
+public class MainView extends JInternalFrame{
     
     public JLabel day;
     public JComboBox daylist;
@@ -28,7 +29,8 @@ public class MainView extends JFrame{
     public MainView(){
         initComponents();
         this.setVisible(true);
-        this.setTitle("IRail");
+        this.setSize(GlobalConstants.windowWidth,GlobalConstants.windowHeight);
+//        this.setBorder(BorderFactory.createEmptyBorder());
     }
     public void initComponents() {
 

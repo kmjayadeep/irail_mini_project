@@ -112,5 +112,8 @@ public class Train extends Model{
     public String getName(){
         return name;
     }
-    
+
+    public int getNo() {
+        return trainNo;
+    }
 }
