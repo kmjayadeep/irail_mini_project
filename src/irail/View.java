@@ -21,7 +21,7 @@ public class View extends JFrame{
     public static JDesktopPane desk;
     
     public View(){
-        super("iRail");
+        super("iRail online railway enquiry system");
         desk = new JDesktopPane();
         this.setSize(GlobalConstants.windowWidth, GlobalConstants.windowHeight);
         this.add(desk);
