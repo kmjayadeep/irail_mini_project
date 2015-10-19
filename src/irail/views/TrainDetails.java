@@ -57,7 +57,7 @@ public class TrainDetails extends javax.swing.JInternalFrame {
         lSeats = new javax.swing.JLabel();
         lDist = new javax.swing.JLabel();
         lFare = new javax.swing.JLabel();
-        button1 = new java.awt.Button();
+        bBook = new java.awt.Button();
 
         setToolTipText("");
         setPreferredSize(new java.awt.Dimension(800, 800));
@@ -171,7 +171,8 @@ public class TrainDetails extends javax.swing.JInternalFrame {
                 .addGap(63, 63, 63))
         );
 
-        button1.setLabel("button1");
+        bBook.setActionCommand("Book");
+        bBook.setLabel("Book");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -199,7 +200,7 @@ public class TrainDetails extends javax.swing.JInternalFrame {
                                     .addComponent(infoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(88, 88, 88))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(des)
@@ -229,7 +230,7 @@ public class TrainDetails extends javax.swing.JInternalFrame {
                         .addGap(90, 90, 90)
                         .addComponent(infoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(47, 47, 47)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
@@ -244,6 +245,8 @@ public class TrainDetails extends javax.swing.JInternalFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
+
+        bBook.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -296,7 +299,7 @@ public class TrainDetails extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button1;
+    public java.awt.Button bBook;
     private javax.swing.JLabel des;
     public javax.swing.JLabel desname;
     public javax.swing.JPanel infoPanel;

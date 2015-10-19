@@ -50,7 +50,7 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="button1" min="-2" max="-2" attributes="0"/>
+                              <Component id="bBook" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -89,7 +89,7 @@
                       <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                       <Component id="infoPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="button1" min="-2" max="-2" attributes="0"/>
+                      <Component id="bBook" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -345,10 +345,17 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="java.awt.Button" name="button1">
+    <Component class="java.awt.Button" name="bBook">
       <Properties>
-        <Property name="label" type="java.lang.String" value="button1"/>
+        <Property name="actionCommand" type="java.lang.String" value="Book"/>
+        <Property name="label" type="java.lang.String" value="Book"/>
       </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+      </AccessibilityProperties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

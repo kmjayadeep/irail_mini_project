@@ -34,6 +34,7 @@ public class View extends JFrame{
         frame.setBorder(BorderFactory.createEmptyBorder());
         BasicInternalFrameTitlePane titlePane = (BasicInternalFrameTitlePane) ((BasicInternalFrameUI)frame.getUI()).getNorthPane();
         frame.remove(titlePane);
+        frame.setVisible(true);
         desk.add(frame);
     }
 }

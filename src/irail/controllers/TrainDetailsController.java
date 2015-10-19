@@ -7,7 +7,6 @@ import irail.models.Train;
 import irail.views.TrainDetails;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,13 +18,14 @@ public class TrainDetailsController implements ActionListener{
    TrainDetails trainView;
    Train train;
    Station src,des;
-   String day;
+   String date;
+   Birth birth;
    
-   public TrainDetailsController(Train T, Station src,Station des,String day ){
+   public TrainDetailsController(Train T, Station src,Station des,String date ){
        train = T;
        this.src = src;
        this.des = des;
-       this.day = day;
+       this.date = date;
        trainView = new TrainDetails();
        trainView.srcname.setText(src.getName());
        trainView.desname.setText(des.getName());
@@ -44,7 +44,9 @@ public class TrainDetailsController implements ActionListener{
        trainView.jRadioButton3.addActionListener(this);
        trainView.jRadioButton4.addActionListener(this);
        trainView.jRadioButton5.addActionListener(this);
+       trainView.bBook.addActionListener(this);
        trainView.infoPanel.setVisible(false);
+       trainView.bBook.setVisible(false);
        trainView.setVisible(true);
        View.addToDesk(trainView);
    }
@@ -52,13 +54,22 @@ public class TrainDetailsController implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         String b = e.getActionCommand();
-        Birth birth = new Birth(train,src,des,b);
-        trainView.lDist.setText(birth.distance+" KM");
-        if(birth.seats!=0)
-            trainView.lFare.setText("Rs."+birth.fare);
-        else
-            trainView.lFare.setText("-");
-        trainView.lSeats.setText(String.valueOf(birth.seats));
-        trainView.infoPanel.setVisible(true);
+        if(b.equals("Book")){
+            trainView.hide();
+            new BookingController(birth,date);
+        }else{
+            birth = new Birth(train,src,des,b);
+            trainView.lDist.setText(birth.distance+" KM");
+            if(birth.seats!=0){
+                trainView.lFare.setText("Rs."+birth.fare);
+                trainView.bBook.setVisible(true);
+            }
+            else{
+                trainView.lFare.setText("-");
+                trainView.bBook.setVisible(false);
+            }
+            trainView.lSeats.setText(String.valueOf(birth.seats));
+            trainView.infoPanel.setVisible(true);
+        }
     }
 }

@@ -43,7 +43,7 @@ public class BookingView extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,13 +80,13 @@ public class BookingView extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Sex:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
 
         jButton1.setText("ADD");
 
         jButton2.setText("PAY");
 
-        jLabel4.setText("Payment Id:");
+        jLabel4.setText("Payment id::");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bank", "Credit Card" }));
 
@@ -132,7 +132,7 @@ public class BookingView extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(299, Short.MAX_VALUE))
+                .addContainerGap(296, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
