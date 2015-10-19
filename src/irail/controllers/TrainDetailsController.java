@@ -1,5 +1,6 @@
 package irail.controllers;
 
+import irail.MainController;
 import irail.View;
 import irail.models.Birth;
 import irail.models.Station;
@@ -15,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class TrainDetailsController implements ActionListener{
     
-   TrainDetails trainView;
+   public static TrainDetails trainView;
    Train train;
    Station src,des;
    String date;
@@ -45,6 +46,7 @@ public class TrainDetailsController implements ActionListener{
        trainView.jRadioButton4.addActionListener(this);
        trainView.jRadioButton5.addActionListener(this);
        trainView.bBook.addActionListener(this);
+       trainView.back.addActionListener(this);
        trainView.infoPanel.setVisible(false);
        trainView.bBook.setVisible(false);
        trainView.setVisible(true);
@@ -57,7 +59,13 @@ public class TrainDetailsController implements ActionListener{
         if(b.equals("Book")){
             trainView.hide();
             new BookingController(birth,date);
-        }else{
+        }
+        else if(b.equals("back")){
+                trainView.dispose();
+                MainController.mainView.setVisible(true);
+                
+        }
+        else{
             birth = new Birth(train,src,des,b);
             trainView.lDist.setText(birth.distance+" KM");
             if(birth.seats!=0){

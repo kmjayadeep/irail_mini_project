@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MainController implements ActionListener,ListSelectionListener{
     
-    MainView mainView;
+    public static MainView mainView;
     View view;
 
     public static void main(String[] args) {

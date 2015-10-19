@@ -28,6 +28,7 @@ public class BookingController implements ActionListener{
         bookingView = new BookingView();
         bookingView.bAdd.addActionListener(this);
         bookingView.bPay.addActionListener(this);
+        bookingView.back.addActionListener(this);
         View.addToDesk(bookingView);
     }
 
@@ -77,6 +78,10 @@ public class BookingController implements ActionListener{
             } catch (SQLException ex) {
                 Logger.getLogger(BookingController.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        else if(ac.equals("back")){
+            bookingView.dispose();
+            TrainDetailsController.trainView.setVisible(true);
         }
     }
     
