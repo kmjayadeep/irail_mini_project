@@ -9,7 +9,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
-import javax.swing.border.Border;
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
  *
@@ -31,6 +32,8 @@ public class View extends JFrame{
     public static void addToDesk(JInternalFrame frame){
         frame.setBounds(0,0,GlobalConstants.windowWidth,GlobalConstants.windowHeight);
         frame.setBorder(BorderFactory.createEmptyBorder());
+        BasicInternalFrameTitlePane titlePane = (BasicInternalFrameTitlePane) ((BasicInternalFrameUI)frame.getUI()).getNorthPane();
+        frame.remove(titlePane);
         desk.add(frame);
     }
 }
