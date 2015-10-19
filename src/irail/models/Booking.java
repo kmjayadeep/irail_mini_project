@@ -3,6 +3,7 @@ package irail.models;
 import irail.Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -17,7 +18,7 @@ public class Booking extends Model{
     int payment_id;
     User users[];
     
-    public Booking(Birth b,String dat,char pt,char pid,User[] u){
+    public Booking(Birth b,String dat,char pt,int pid,User[] u){
         birth = b;
         date = dat;
         payment_type = pt;
@@ -27,8 +28,9 @@ public class Booking extends Model{
     
     public void save() throws SQLException{
         String sql = "insert into booking values (null,"+birth.train.trainNo+","+escapeString(birth.src.shortName)+",";
-        sql+=escapeString(birth.des.shortName)+","+escapeString(date)+","+payment_id+","+birth.fare+")";
-        statement.executeUpdate(sql);
+        sql+=escapeString(birth.des.shortName)+","+escapeString(birth.birth)+","+escapeString(date);
+        sql+=",'"+payment_type+"',"+payment_id+","+birth.fare+")";
+        statement.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
         ResultSet rs = statement.getGeneratedKeys();
         if(rs.next())
             pnr = rs.getInt(1);
@@ -50,7 +52,7 @@ public class Booking extends Model{
         String coach = res.getString(5);
         birth = new Birth(train,src,des,coach);
         date = res.getString(6);
-        payment_type = (char) res.getInt(7);
+        payment_type = res.getString(7).charAt(0);
         payment_id = res.getInt(8);
     }
     

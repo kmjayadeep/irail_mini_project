@@ -28,24 +28,24 @@ public class BookingView extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        table = new javax.swing.JTable();
+        tName = new javax.swing.JTextField();
+        tAge = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
+        cbSex = new javax.swing.JComboBox();
+        bAdd = new javax.swing.JButton();
+        bPay = new javax.swing.JButton();
+        tbPaymentId = new javax.swing.JTextField();
+        tPaymentId = new javax.swing.JLabel();
+        cbPayment = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        tPayment = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -61,16 +61,16 @@ public class BookingView extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane1.setViewportView(table);
+        if (table.getColumnModel().getColumnCount() > 0) {
+            table.getColumnModel().getColumn(0).setResizable(false);
+            table.getColumnModel().getColumn(1).setResizable(false);
+            table.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tNameActionPerformed(evt);
             }
         });
 
@@ -80,19 +80,19 @@ public class BookingView extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Sex:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
+        cbSex.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Male", "Female" }));
 
-        jButton1.setText("ADD");
+        bAdd.setText("Add");
 
-        jButton2.setText("PAY");
+        bPay.setText("Pay");
 
-        jLabel4.setText("Payment id::");
+        tPaymentId.setText("Payment id::");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bank", "Credit Card" }));
+        cbPayment.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Bank", "Credit Card" }));
 
         jLabel5.setText("Type");
 
-        jLabel6.setText("Total Payment: 0");
+        tPayment.setText("Total Payment: 0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,6 +101,17 @@ public class BookingView extends javax.swing.JInternalFrame {
             .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(187, 187, 187)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbPayment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tPaymentId)
+                        .addGap(17, 17, 17)
+                        .addComponent(tbPaymentId, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bPay))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -113,26 +124,16 @@ public class BookingView extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField1)
-                            .addComponent(jComboBox1, 0, 94, Short.MAX_VALUE)))
+                            .addComponent(tName)
+                            .addComponent(tAge)
+                            .addComponent(cbSex, 0, 122, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(bAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addGap(17, 17, 17)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(339, 339, 339)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(296, Short.MAX_VALUE))
+                        .addGap(361, 361, 361)
+                        .addComponent(tPayment)))
+                .addContainerGap(297, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,26 +142,26 @@ public class BookingView extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbSex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(bAdd)
+                .addGap(18, 18, 18)
+                .addComponent(tPayment)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bPay)
+                    .addComponent(tbPaymentId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tPaymentId)
+                    .addComponent(cbPayment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(213, 213, 213))
         );
@@ -168,29 +169,29 @@ public class BookingView extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tNameActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
+    public javax.swing.JButton bAdd;
+    public javax.swing.JButton bPay;
+    public javax.swing.JComboBox cbPayment;
+    public javax.swing.JComboBox cbSex;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    public javax.swing.JTextField tAge;
+    public javax.swing.JTextField tName;
+    public javax.swing.JLabel tPayment;
+    private javax.swing.JLabel tPaymentId;
+    public javax.swing.JTable table;
+    public javax.swing.JTextField tbPaymentId;
     // End of variables declaration//GEN-END:variables
 }

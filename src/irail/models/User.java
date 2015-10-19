@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author jayadeep
  */
-class User extends Model{
+public class User extends Model{
 
     int pnr;
     String name;
@@ -27,7 +27,7 @@ class User extends Model{
     }
     
     public void save(int pnr) throws SQLException{
-        String sql = "insert into user values("+pnr+","+escapeString(name)+","+sex+","+age+")";
+        String sql = "insert into user values("+pnr+","+escapeString(name)+",'"+sex+"',"+age+")";
         statement.executeUpdate(sql);
     }
     
