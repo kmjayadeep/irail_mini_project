@@ -33,6 +33,7 @@ public class MainController implements ActionListener,ListSelectionListener{
         mainView.table.getTableHeader().setReorderingAllowed(false);
         mainView.table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         mainView.table.getSelectionModel().addListSelectionListener(this);
+        mainView.setVisible(true);
         View.addToDesk(mainView);
     }
 

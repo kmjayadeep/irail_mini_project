@@ -105,7 +105,7 @@ public class Train extends Model{
     }
     
     public static String[] getColumns(){
-        String s[] =  {"Train No","Name","From","To","Type "};
+        String s[] =  {"Train No","Train Name","Source","Destination","Type "};
         return s;
     }
     
