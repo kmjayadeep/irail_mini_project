@@ -29,7 +29,7 @@ public class Booking extends Model{
     public void save() throws SQLException{
         String sql = "insert into booking values (null,"+birth.train.trainNo+","+escapeString(birth.src.shortName)+",";
         sql+=escapeString(birth.des.shortName)+","+escapeString(birth.birth)+","+escapeString(date);
-        sql+=",'"+payment_type+"',"+payment_id+","+birth.fare+")";
+        sql+=",'"+payment_type+"',"+payment_id+","+birth.fare*users.length+")";
         statement.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS);
         ResultSet rs = statement.getGeneratedKeys();
         if(rs.next())

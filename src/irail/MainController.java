@@ -52,7 +52,8 @@ public class MainController implements ActionListener,ListSelectionListener{
     public void actionPerformed(ActionEvent e) {
         String from = mainView.src.getText().toString().toUpperCase();
         String to = mainView.des.getText().toString().toUpperCase();
-        int day = mainView.daylist.getSelectedIndex();
+        int day = Integer.parseInt(mainView.tDate.getText().toString().substring(9,10))%7;
+        System.out.println(day);
         ArrayList<Train> tr = Train.search(from,to,day);
         int ttt = tr.size();
         String trains[][] = new String[ttt][5];
@@ -80,7 +81,7 @@ public class MainController implements ActionListener,ListSelectionListener{
         Train train = new Train(trainNo);
         Station src = new Station(mainView.src.getText().toString().toUpperCase());
         Station dest = new Station(mainView.des.getText().toString().toUpperCase());
-        String date = "2015-10-17"; //change later
+        String date = mainView.tDate.getText().toString();
         new TrainDetailsController(train, src, dest, date);
     }
 
