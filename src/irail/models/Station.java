@@ -6,10 +6,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author jayadeep
- */
 public class Station extends Model{
     String name;
     String shortName; //primary

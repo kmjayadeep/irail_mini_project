@@ -7,10 +7,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author jayadeep
- */
 public class Train extends Model{
     int trainNo;
     String name;

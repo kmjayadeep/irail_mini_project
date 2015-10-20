@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package irail;
 
 import javax.swing.BorderFactory;
@@ -12,10 +7,6 @@ import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
-/**
- *
- * @author jayadeep
- */
 public class View extends JFrame{
     
     public static JDesktopPane desk;

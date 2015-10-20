@@ -11,10 +11,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author krishnaraj
- */
 public class TrainDetailsController implements ActionListener{
     
    public static TrainDetails trainView;

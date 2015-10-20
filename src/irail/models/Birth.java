@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package irail.models;
 
 import irail.Model;
@@ -11,17 +6,13 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author jayadeep
- */
 public class Birth extends Model{
 
     Train train;
     Station src;
     Station des;
     public int distance;
-    public int fare;
+    public float fare;
     public int seats;
     String birth;
     
@@ -50,7 +41,7 @@ public class Birth extends Model{
     @Override
     public void fromResultSet(ResultSet res) throws SQLException {
         distance = res.getInt("distance");
-        int rate = res.getInt("rate");
+        float rate = res.getFloat("rate");
         fare = distance*rate;
         seats = res.getInt("seats");
     }

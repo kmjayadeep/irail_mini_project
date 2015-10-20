@@ -8,10 +8,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author jayadeep
- */
 public abstract class Model {
     public static Statement statement=null;
     

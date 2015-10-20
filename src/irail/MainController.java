@@ -12,10 +12,6 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author jayadeep
- */
 public class MainController implements ActionListener,ListSelectionListener{
     
     public static MainView mainView;

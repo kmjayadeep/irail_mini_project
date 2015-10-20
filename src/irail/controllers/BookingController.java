@@ -14,10 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author jayadeep
- */
+
 public class BookingController implements ActionListener{
     Birth birth;
     BookingView bookingView;
@@ -43,7 +40,7 @@ public class BookingController implements ActionListener{
             int age = Integer.valueOf(bookingView.tAge.getText().toString());
             model.addRow(new String[]{name,sex,age+""});
             int rows = model.getRowCount();
-            int payment = rows*birth.fare;
+            float payment = rows*birth.fare;
             bookingView.tPayment.setText("Total Payment : "+payment);
         }else if(ac.equals("Pay")){
             DefaultTableModel model = (DefaultTableModel) bookingView.table.getModel();

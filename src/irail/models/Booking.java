@@ -5,10 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- *
- * @author jayadeep
- */
 public class Booking extends Model{
 
     int pnr;
