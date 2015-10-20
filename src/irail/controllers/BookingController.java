@@ -11,6 +11,7 @@ import java.util.Vector;
 import java.util.function.Consumer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -75,7 +76,11 @@ public class BookingController implements ActionListener{
             Booking booking = new Booking(birth,date,type,payId,us);
             try {
                 booking.save();
+                JOptionPane.showMessageDialog(bookingView, "Success","Booking Successful",JOptionPane.INFORMATION_MESSAGE);
+                bookingView.table.removeAll();
+                bookingView.table.setModel(new DefaultTableModel(new String[][] {},new String[]{"Name","Sex","Age"}));
             } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(bookingView, "Error","Booking Unsuccessful",JOptionPane.ERROR_MESSAGE);
                 Logger.getLogger(BookingController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

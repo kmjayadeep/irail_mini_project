@@ -177,6 +177,11 @@ public class TrainDetails extends javax.swing.JInternalFrame {
 
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/irail/views/1445285110_arrow-back-outline.png"))); // NOI18N
         back.setActionCommand("back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -272,6 +277,10 @@ public class TrainDetails extends javax.swing.JInternalFrame {
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments

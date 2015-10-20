@@ -8,6 +8,7 @@ import irail.models.Train;
 import irail.views.TrainDetails;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -63,7 +64,8 @@ public class TrainDetailsController implements ActionListener{
         else if(b.equals("back")){
                 trainView.dispose();
                 MainController.mainView.setVisible(true);
-                
+                MainController.mainView.table.removeAll();
+                MainController.mainView.table.setModel(new DefaultTableModel(new String[][] {},Train.getColumns()));
         }
         else{
             birth = new Birth(train,src,des,b);
